@@ -53,9 +53,12 @@ export default function Main() {
         {tasks.length == 0 ? (<DefaultMessage/>): (Tasks)}
       </ScrollView>
 
-    <TouchableOpacity  onPress={onAddTask} style={styles.addButton}>
-        <Icon name="plus" style={styles.addIconStyle} />
-    </TouchableOpacity>
+    {taskText.length > 0 ?
+    (<TouchableOpacity  onPress={onAddTask} style={styles.addButton}>
+      <Icon name="plus" style={styles.addIconStyle} />
+    </TouchableOpacity>) : null
+    }
+   
 
     <View style={styles.footer}>
         <TextInput
